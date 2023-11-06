@@ -1,24 +1,33 @@
 package org.jammu;
 
 import genetics.*;
-import schedule.ScheduleConstants;
-import schedule.ScheduleUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Stream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 
 public class Main {
-    public static void main(String[] args) {
-        long start = System.currentTimeMillis();
+    public static void main(String[] args) throws IOException {
         Population population = new Population();
+
         for(int i = 0; i < GeneticConstants.NUMBER_OF_GENERATIONS; i++) {
             population.runGeneration();
             population.printBestIndividualInformation();
         }
 
-        System.out.println("Total: " + (System.currentTimeMillis() - start));
+        double previousAverageFitnessScore;
+        do {
+            previousAverageFitnessScore = population.getAverageFitness();
+            population.runGeneration();
+            population.printBestIndividualInformation();
+        } while (population.getAverageFitness() > 1.01 * previousAverageFitnessScore);
+
+
+        System.out.println(population.getBestIndividual().toPrettyString());
+        Files.writeString(Paths.get("output.txt"), population.getBestIndividual().toPrettyString());
+
 
     }
 }

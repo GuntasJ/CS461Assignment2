@@ -16,4 +16,9 @@ public record Activity(String name,
                 new ArrayList<>(otherFacilitators)
         );
     }
+
+    public String toPrettyString() {
+        return name;
+
+    }
 }

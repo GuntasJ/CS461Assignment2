@@ -22,8 +22,19 @@ public class Population {
         System.out.println("_______________________________________________________");
         System.out.println("Best Individual from generation: " + generationCount);
         System.out.println(population.get(0));
-        System.out.println("Fitness Score: " + population.get(0).getFitness());
+        System.out.println("Best Fitness Score of generation: " + population.get(0).getFitness());
+        System.out.println("Average Fitness Score of generation: " + getAverageFitness());
         System.out.println("_______________________________________________________");
+    }
+
+    public Chromosome getBestIndividual() {
+        return population.get(0);
+    }
+    public double getAverageFitness() {
+        return population
+                .stream()
+                .mapToDouble(Chromosome::getFitness)
+                .sum() / population.size();
     }
 
     public void runGeneration() {
@@ -45,14 +56,15 @@ public class Population {
 
         int targetPopulation = population.size() * 2;
         while(population.size() != targetPopulation) {
-            Chromosome chromosome1 = probabilityDistributor.pick(0);
-            Chromosome chromosome2 = probabilityDistributor.pick(1);
+            probabilityDistributor.restoreRemoved();
+
+            Chromosome chromosome1 = probabilityDistributor.pickAndRemove(0);
+            Chromosome chromosome2 = probabilityDistributor.pickAndRemove(1);
 
             List<Chromosome> offspring = chromosome1.crossoverWith(chromosome2);
 
             offspring.forEach(Chromosome::attemptMutation);
             population.addAll(offspring);
-
         }
     }
 

@@ -34,11 +34,11 @@ public class GeneticUtils {
         if(targetGene.getActivity().expectedEnrollment() > targetGene.getRoom().capacity()) {
             fitnessScore -= 0.5;
         }
-        else if(targetGene.getRoom().capacity() > 3 * targetGene.getActivity().expectedEnrollment()) {
-            fitnessScore -= 0.2;
-        }
         else if(targetGene.getRoom().capacity() > 6 * targetGene.getActivity().expectedEnrollment()) {
             fitnessScore -= 0.4;
+        }
+        else if(targetGene.getRoom().capacity() > 3 * targetGene.getActivity().expectedEnrollment()) {
+            fitnessScore -= 0.2;
         }
         else {
             fitnessScore += 0.3;

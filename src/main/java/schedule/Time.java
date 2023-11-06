@@ -21,4 +21,8 @@ public record Time(int hourValue, Period period) {
 
         return Math.abs(convertedHourValue1 - convertedHourValue2);
     }
+
+    public String toPrettyString() {
+        return hourValue + period.name();
+    }
 }

@@ -57,7 +57,7 @@ public final class Chromosome implements Probability {
     private List<Gene> splitGenes(int start, int end) {
         return geneList.subList(start, end)
                 .stream()
-                .map(Gene::copyGene)
+                .map(Gene::copy)
                 .toList();
     }
 
@@ -195,6 +195,20 @@ public final class Chromosome implements Probability {
         return "Chromosome{" +
                 "geneList=" + geneList +
                 '}';
+    }
+
+    public String toPrettyString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder
+                .append("Schedule = {")
+                .append("\n");
+        for (Gene gene : geneList) {
+            stringBuilder.append("\t").append(gene.toPrettyString()).append("\n");
+        }
+
+        stringBuilder.append("}");
+
+        return stringBuilder.toString();
     }
 
     public List<Gene> geneList() {

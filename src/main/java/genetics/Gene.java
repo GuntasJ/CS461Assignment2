@@ -21,8 +21,8 @@ public class Gene {
         this.facilitator = facilitator;
     }
 
-    Gene copyGene() {
-        return new Gene(activity.copy(), room.copy(), time.copy(), facilitator);
+    Gene copy() {
+        return new Gene(activity, room, time, facilitator);
     }
 
     void mutateFacilitator() {
@@ -82,5 +82,16 @@ public class Gene {
                 ", time=" + time +
                 ", facilitator='" + facilitator + '\'' +
                 '}';
+    }
+
+    public String toPrettyString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder
+                .append(activity.name()).append(" = {").append("\n")
+                .append("\t\t").append("Room = ").append(room.name()).append("\n")
+                .append("\t\t").append("Time = ").append(time.toPrettyString()).append("\n")
+                .append("\t\t").append("Facilitator = ").append(facilitator).append("\n")
+                .append("\t}");
+        return stringBuilder.toString();
     }
 }
