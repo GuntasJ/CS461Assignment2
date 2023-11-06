@@ -12,8 +12,8 @@ public record Activity(String name,
         return new Activity(
                 name,
                 expectedEnrollment,
-                new ArrayList<String>(preferredFacilitators),
-                new ArrayList<String>(otherFacilitators)
+                new ArrayList<>(preferredFacilitators),
+                new ArrayList<>(otherFacilitators)
         );
     }
 }
