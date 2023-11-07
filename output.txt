@@ -1,57 +1,57 @@
 Schedule = {
 	SLA101A = {
 		Room = Roman 201
-		Time = 1PM
-		Facilitator = Lock
+		Time = 10AM
+		Facilitator = Glen
 	}
 	SLA101B = {
-		Room = Loft 206
-		Time = 11AM
+		Room = Roman 201
+		Time = 3PM
 		Facilitator = Banks
 	}
 	SLA191A = {
-		Room = Frank 119
-		Time = 10AM
-		Facilitator = Zeldin
+		Room = Roman 201
+		Time = 11AM
+		Facilitator = Glen
 	}
 	SLA191B = {
 		Room = Loft 310
-		Time = 3PM
-		Facilitator = Lock
+		Time = 1PM
+		Facilitator = Glen
 	}
 	SLA201 = {
-		Room = Loft 310
+		Room = Roman 201
 		Time = 12PM
 		Facilitator = Banks
 	}
 	SLA291 = {
-		Room = Roman 201
-		Time = 10AM
-		Facilitator = Lock
-	}
-	SLA303 = {
-		Room = Beach 201
-		Time = 2PM
+		Room = Loft 206
+		Time = 11AM
 		Facilitator = Banks
 	}
-	SLA304 = {
-		Room = Slater 003
-		Time = 12PM
-		Facilitator = Tyler
-	}
-	SLA394 = {
-		Room = Frank 119
-		Time = 3PM
-		Facilitator = Zeldin
-	}
-	SLA449 = {
+	SLA303 = {
 		Room = Frank 119
 		Time = 11AM
+		Facilitator = Singer
+	}
+	SLA304 = {
+		Room = Frank 119
+		Time = 3PM
+		Facilitator = Glen
+	}
+	SLA394 = {
+		Room = Slater 003
+		Time = 1PM
+		Facilitator = Singer
+	}
+	SLA449 = {
+		Room = Beach 201
+		Time = 12PM
 		Facilitator = Tyler
 	}
 	SLA451 = {
 		Room = Loft 310
-		Time = 1PM
-		Facilitator = Zeldin
+		Time = 10AM
+		Facilitator = Singer
 	}
 }

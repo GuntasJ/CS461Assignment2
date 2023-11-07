@@ -25,7 +25,6 @@ public class Main {
         } while (population.getAverageFitness() > 1.01 * previousAverageFitnessScore);
 
 
-        System.out.println(population.getBestIndividual().toPrettyString());
         Files.writeString(Paths.get("output.txt"), population.getBestIndividual().toPrettyString());
 
 
