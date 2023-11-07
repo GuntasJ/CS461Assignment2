@@ -85,13 +85,10 @@ public class Gene {
     }
 
     public String toPrettyString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder
-                .append(activity.name()).append(" = {").append("\n")
-                .append("\t\t").append("Room = ").append(room.name()).append("\n")
-                .append("\t\t").append("Time = ").append(time.toPrettyString()).append("\n")
-                .append("\t\t").append("Facilitator = ").append(facilitator).append("\n")
-                .append("\t}");
-        return stringBuilder.toString();
+        return activity.name() + " = {" + "\n" +
+                "\t\t" + "Room = " + room.name() + "\n" +
+                "\t\t" + "Time = " + time.toPrettyString() + "\n" +
+                "\t\t" + "Facilitator = " + facilitator + "\n" +
+                "\t}";
     }
 }
